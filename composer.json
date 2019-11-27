@@ -1,7 +1,15 @@
 {
     "require": {
-        "erusev/parsedown": "^1.7",
         "bref/logger": "^1.0",
-        "bref/bref": "^0.5.11"
-    }
+        "bref/bref": "^0.5.11",
+        "erusev/parsedown": "^1.7",
+        "yiisoft/yii2": "^2.0",
+        "yiisoft/yii2-twig": "^2.2"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }
