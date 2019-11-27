@@ -1,0 +1,7 @@
+{
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "bref/logger": "^1.0",
+        "bref/bref": "^0.5.11"
+    }
+}
