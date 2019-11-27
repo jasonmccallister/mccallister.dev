@@ -1,4 +1,4 @@
-ENV ?= dev
+ENV ?= prod
 
 serve:
 	vendor/bin/yii serve --docroot=./web

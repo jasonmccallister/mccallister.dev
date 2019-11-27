@@ -1,4 +1,4 @@
-service: mccalliser-dev
+service: mccallister-dev
 
 provider:
     name: aws
