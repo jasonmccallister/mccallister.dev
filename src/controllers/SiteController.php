@@ -2,17 +2,10 @@
 
 namespace app\controllers;
 
-use yii\web\Controller;
-use Bref\Logger\StderrLogger;
-
 class SiteController extends Controller
 {
     public function actionIndex()
     {
-        $logger = new StderrLogger();
-
-        $logger->error(print_r($_SERVER, true));
-
         return $this->asJson(['hello' => 'world']);
     }
 

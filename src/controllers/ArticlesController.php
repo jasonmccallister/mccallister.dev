@@ -3,7 +3,6 @@
 namespace app\controllers;
 
 use Yii;
-use yii\web\Controller;
 use yii\base\ErrorException;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -14,20 +13,21 @@ class ArticlesController extends Controller
         return $this->asJson(['all' => 'articles']);
     }
 
+    /**
+     * Shows a specific article using the slug
+     *
+     * @return void
+     */
     public function actionShow()
     {
         if (!$slug = Yii::$app->getRequest()->getQueryParam('slug')) {
-            Yii::$app->getResponse()->setStatusCode(404);
-
-            return $this->render('404.twig');
+            return $this->notFound();
         }
 
         try {
             $yaml = YamlFrontMatter::parseFile('../content/' . $slug . '.md');
         } catch (ErrorException $e) {
-            Yii::$app->getResponse()->setStatusCode(404);
-
-            return $this->render('404.twig');
+            return $this->notFound();
         }
 
         return $this->asJson([

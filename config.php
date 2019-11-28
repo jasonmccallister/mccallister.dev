@@ -6,10 +6,10 @@ return [
     'controllerNamespace' => 'app\controllers',
     'aliases' => [
         '@app' => __DIR__ . '/src/',
-        '@content' => '../content',
+        '@content' => __DIR__ . '/src/content',
         '@tmp' => '/tmp'
     ],
-    'layout' => 'main.html.twig',
+    'layout' => 'layout.html.twig',
     'components' => [
         'view' => [
             'class' => 'yii\web\View',
