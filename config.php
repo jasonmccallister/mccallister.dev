@@ -6,6 +6,7 @@ return [
     'controllerNamespace' => 'app\controllers',
     'aliases' => [
         '@app' => __DIR__,
+        '@content' => '../content',
         '@tmp' => '/tmp'
     ],
     'layout' => 'main.html.twig',
