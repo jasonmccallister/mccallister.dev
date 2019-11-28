@@ -17,10 +17,7 @@ jobs:
       run: npm install
 
     - name: Build Tailwind CSS
-      run: npm install
+      run: npm run build
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Deploy Serverless
+      run: ./node_modules/.bin/sls deploy --stage=prod
