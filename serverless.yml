@@ -13,7 +13,7 @@ package:
     - node_modules/**
 
 functions:
-    api:
+    web:
         handler: web/index.php
         description: 'the handler for the mccallister.dev website'
         timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
