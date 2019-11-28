@@ -32,6 +32,8 @@ return [
             'enableStrictParsing' => false,
             'rules' => [
                 '/' => 'site/home',
+                '/articles' => 'articles/index',
+                '/articles/<slug>' => 'articles/show',
             ],
         ],
         'request' => [
