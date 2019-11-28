@@ -2,10 +2,10 @@
 
 return [
     'id' => 'mccallister-dev',
-    'basePath' => __DIR__,
+    'basePath' => __DIR__ . '/src/',
     'controllerNamespace' => 'app\controllers',
     'aliases' => [
-        '@app' => __DIR__,
+        '@app' => __DIR__ . '/src/',
         '@content' => '../content',
         '@tmp' => '/tmp'
     ],
