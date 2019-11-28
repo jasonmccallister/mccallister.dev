@@ -8,6 +8,10 @@ provider:
 plugins:
     - ./vendor/bref/bref
 
+package:
+  exclude:
+    - node_modules/**
+
 functions:
     api:
         handler: web/index.php
