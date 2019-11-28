@@ -7,6 +7,7 @@ return [
     'aliases' => [
         '@app' => __DIR__ . '/src/',
         '@content' => __DIR__ . '/src/content',
+        '@web' => __DIR__ . '/web',
         '@tmp' => '/tmp'
     ],
     'layout' => 'layout.html.twig',
