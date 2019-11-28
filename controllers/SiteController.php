@@ -2,10 +2,8 @@
 
 namespace app\controllers;
 
-use Bref\Logger\StderrLogger;
-use Parsedown;
-use Yii;
 use yii\web\Controller;
+use Bref\Logger\StderrLogger;
 
 class SiteController extends Controller
 {
