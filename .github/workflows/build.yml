@@ -10,8 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Install dependencies
+    - name: Install PHP dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Install node dependencies
+      run: npm install
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
