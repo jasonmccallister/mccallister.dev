@@ -33,7 +33,7 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
-                '/' => 'site/home',
+                '/' => 'site/index',
                 '/articles' => 'articles/index',
                 '/articles/<slug>' => 'articles/show',
             ],
