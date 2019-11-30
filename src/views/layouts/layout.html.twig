@@ -1,25 +1,28 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		{% set title = 'Jason McCallister - DevOps Engineer' %}
+		{% set description = 'DevOps Engineer working with Docker, Serverless PHP, Go, Amazon Web Services, and more.' %}
+		{% set website = 'https://mccallister.dev' %}
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link href="https://unpkg.com/tailwindcss@1.1.4/dist/tailwind.min.css" rel="stylesheet">
-		<title>Jason McCallister - DevOps Engineer</title>
-		<meta name="title" content="Jason McCallister - DevOps Engineer">
-		<meta name="description" content="DevOps Engineer working with Docker, Serverless PHP, Go, Amazon Web Services, and more.">
+		<title>{{ title }}</title>
+		<meta name="title" content="{{ title }}">
+		<meta name="description" content="{{ description }}">
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://mccallister.dev/">
-		<meta property="og:title" content="Jason McCallister - DevOps Engineer">
+		<meta property="og:url" content="{{ website }}">
+		<meta property="og:title" content="{{ title }}">
 		<meta
-		property="og:description" content="DevOps Engineer working with Docker, Serverless PHP, Go, Amazon Web Services, and more.">
+		property="og:description" content="{{ description }}">
 		{# <meta property="og:image" content=""> #}
 		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content="https://mccallister.dev/">
-		<meta property="twitter:title" content="Jason McCallister - DevOps Engineer">
+		<meta property="twitter:url" content="{{ website }}">
+		<meta property="twitter:title" content="{{ title }}">
 		<meta
-		property="twitter:description" content="DevOps Engineer working with Docker, Serverless PHP, Go, Amazon Web Services, and more.">
+		property="twitter:description" content="{{ description }}">
 	{# <meta property="twitter:image" content=""> #}
 	</head>
 	<body class="antialiased">
