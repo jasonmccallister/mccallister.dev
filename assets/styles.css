@@ -10,12 +10,16 @@
 
 /* Custom retro-tech styling */
 .font-mono {
-  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New", monospace;
+  font-family:
+    "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New",
+    monospace;
 }
 
 /* Code block styling */
 pre code {
-  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New", monospace;
+  font-family:
+    "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New",
+    monospace;
 }
 
 /* Markdown content styling */
@@ -38,8 +42,12 @@ pre code {
 
 /* Terminal cursor blink effect */
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 .cursor-blink::after {

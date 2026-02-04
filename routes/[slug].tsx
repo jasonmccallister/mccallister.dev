@@ -1,6 +1,6 @@
 import { define } from "@/utils.ts";
 import { Layout } from "@/components/Layout.tsx";
-import { getPost, formatDate } from "@/lib/content.ts";
+import { formatDate, getPost } from "@/lib/content.ts";
 import { page } from "fresh";
 
 export const handler = define.handlers({
@@ -48,12 +48,17 @@ export default define.page<typeof handler>(function PostPage({ data }) {
         <header class="mb-8">
           <div class="flex flex-wrap gap-2 mb-4">
             {frontmatter.tags.map((tag) => (
-              <span class="badge badge-primary badge-outline font-mono" key={tag}>
+              <span
+                class="badge badge-primary badge-outline font-mono"
+                key={tag}
+              >
                 {tag}
               </span>
             ))}
           </div>
-          <h1 class="text-3xl md:text-4xl font-bold mb-4">{frontmatter.title}</h1>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">
+            {frontmatter.title}
+          </h1>
           <div class="flex items-center gap-4 text-sm opacity-70 font-mono">
             <time datetime={frontmatter.date}>
               {formatDate(frontmatter.date)}

@@ -1,7 +1,7 @@
 import { define } from "@/utils.ts";
 import { Layout } from "@/components/Layout.tsx";
 import { PostCard } from "@/components/PostCard.tsx";
-import { getPosts, getFeaturedPosts } from "@/lib/content.ts";
+import { getFeaturedPosts, getPosts } from "@/lib/content.ts";
 
 export default define.page(async function Home() {
   const posts = await getPosts();

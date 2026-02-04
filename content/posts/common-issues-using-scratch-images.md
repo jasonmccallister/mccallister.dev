@@ -9,11 +9,16 @@ description: "Pitfalls to watch out for when building container images from scra
 tags: ["containers", "docker", "go"]
 ---
 
-Using `FROM SCRATCH` in container builds can be tricky. I discovered this firsthand when shipping a Go application that needed to make API requests.
+Using `FROM SCRATCH` in container builds can be tricky. I discovered this
+firsthand when shipping a Go application that needed to make API requests.
 
-The first issue tripped me up when deploying an application requiring API connectivity. There are multiple overlooked pitfalls in this containerization technique.
+The first issue tripped me up when deploying an application requiring API
+connectivity. There are multiple overlooked pitfalls in this containerization
+technique.
 
-Lots of good details in this tutorial: [Building Container Images FROM Scratch: 6 Pitfalls That Are Often Overlooked](https://labs.iximiuz.com/tutorials/pitfalls-of-from-scratch-images) from Ivan Velichko's labs.
+Lots of good details in this tutorial:
+[Building Container Images FROM Scratch: 6 Pitfalls That Are Often Overlooked](https://labs.iximiuz.com/tutorials/pitfalls-of-from-scratch-images)
+from Ivan Velichko's labs.
 
 Key issues to watch out for:
 
@@ -30,4 +35,5 @@ When building Go applications for scratch images, remember to:
 CGO_ENABLED=0 go build -o app
 ```
 
-This ensures your binary is statically linked and doesn't depend on system libraries.
+This ensures your binary is statically linked and doesn't depend on system
+libraries.

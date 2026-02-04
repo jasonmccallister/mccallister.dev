@@ -33,7 +33,9 @@ export function PostCard({ post, featured = false }: PostCardProps) {
             </a>
           </h2>
           <div class="flex items-center gap-2 text-sm opacity-70 font-mono">
-            <time datetime={frontmatter.date}>{formatDate(frontmatter.date)}</time>
+            <time datetime={frontmatter.date}>
+              {formatDate(frontmatter.date)}
+            </time>
             <span>•</span>
             <span>{frontmatter.readingTime}</span>
           </div>
@@ -62,7 +64,9 @@ export function PostCard({ post, featured = false }: PostCardProps) {
           </a>
         </h3>
         <div class="flex items-center gap-2 text-sm opacity-70 font-mono">
-          <time datetime={frontmatter.date}>{formatDate(frontmatter.date)}</time>
+          <time datetime={frontmatter.date}>
+            {formatDate(frontmatter.date)}
+          </time>
           <span>•</span>
           <span>{frontmatter.readingTime}</span>
         </div>

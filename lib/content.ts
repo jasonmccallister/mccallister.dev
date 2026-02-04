@@ -44,7 +44,13 @@ export async function getPosts(): Promise<Post[]> {
         html: render(body, {
           allowedTags: ["iframe"],
           allowedAttributes: {
-            iframe: ["src", "width", "height", "frameborder", "allowfullscreen"],
+            iframe: [
+              "src",
+              "width",
+              "height",
+              "frameborder",
+              "allowfullscreen",
+            ],
           },
         }),
       });
@@ -55,7 +61,7 @@ export async function getPosts(): Promise<Post[]> {
   posts.sort(
     (a, b) =>
       new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime()
+      new Date(a.frontmatter.date).getTime(),
   );
 
   return posts;
