@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "@tailwindcss/typography";
+
+/* DaisyUI Theme Configuration */
+@theme {
+  /* Retro theme customization for light mode */
+  --color-retro-primary: #3432ee;
+}
+
+/* Custom retro-tech styling */
+.font-mono {
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New", monospace;
+}
+
+/* Code block styling */
+pre code {
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New", monospace;
+}
+
+/* Markdown content styling */
+.prose pre {
+  @apply bg-base-300 border border-base-300 rounded-lg overflow-x-auto;
+}
+
+.prose code {
+  @apply bg-base-300 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose code::before,
+.prose code::after {
+  content: none;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Terminal cursor blink effect */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: "█";
+  animation: blink 1s infinite;
+  @apply text-primary;
+}
+
+/* Retro scanline effect (subtle) */
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Card hover effects */
+.card {
+  @apply transition-all duration-200;
+}
+
+.card:hover {
+  @apply -translate-y-0.5;
+}
+
+/* Link styling */
+a {
+  @apply transition-colors duration-150;
+}
+
+/* Badge styling */
+.badge {
+  @apply font-mono text-xs;
+}
+
+/* Navbar transparency on scroll */
+.navbar {
+  @apply backdrop-blur-sm;
+}
+
+/* Mobile drawer styling */
+.drawer-side {
+  @apply backdrop-blur-sm;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-base-300 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .footer,
+  .drawer-side {
+    display: none !important;
+  }
+
+  .prose {
+    max-width: none;
+  }
+}
