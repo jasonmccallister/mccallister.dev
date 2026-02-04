@@ -1,7 +1,7 @@
 import { define } from "@/utils.ts";
 import { Layout } from "@/components/Layout.tsx";
 import { formatDate, getPost } from "@/lib/content.ts";
-import { page } from "fresh";
+import { HttpError, page } from "fresh";
 
 export const handler = define.handlers({
   async GET(ctx) {
@@ -9,34 +9,19 @@ export const handler = define.handlers({
     const post = await getPost(slug);
 
     if (!post) {
-      return page({ post: null, slug });
+      throw new HttpError(404);
     }
 
-    return page({ post, slug });
+    return page({ post });
   },
 });
 
 export default define.page<typeof handler>(function PostPage({ data }) {
-  const { post, slug } = data;
+  const { post } = data;
 
   if (!post) {
-    return (
-      <Layout title="Not Found">
-        <div class="text-center py-16">
-          <div class="mockup-code bg-base-300 max-w-md mx-auto">
-            <pre data-prefix="$" class="text-error">
-              <code>cat {slug}.md</code>
-            </pre>
-            <pre data-prefix=">" class="text-error">
-              <code>Error: Post not found</code>
-            </pre>
-          </div>
-          <a href="/" class="btn btn-primary mt-8">
-            &lt;- Back to Home
-          </a>
-        </div>
-      </Layout>
-    );
+    // throw 404 error to trigger notFound handler in main.ts
+    throw new HttpError(404);
   }
 
   const { frontmatter, html } = post;
