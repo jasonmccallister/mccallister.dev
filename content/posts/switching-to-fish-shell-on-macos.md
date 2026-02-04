@@ -4,7 +4,7 @@ slug: "switching-to-fish-shell-on-macos"
 date: "2025-07-22"
 readingTime: "3 min read"
 featured: true
-featuredImage: "/static/images/CleanShot-2025-07-22-at-10.51.34@2x-1.png"
+featuredImage: "/images/CleanShot-2025-07-22-at-10.51.34@2x-1.png"
 description: "A guide to transitioning from ZSH to Fish Shell on macOS, covering installation, configuration, and recovery tips."
 tags: ["shell", "macos", "fish"]
 ---

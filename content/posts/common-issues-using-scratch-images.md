@@ -4,7 +4,7 @@ slug: "common-issues-using-scratch-images"
 date: "2025-01-26"
 readingTime: "1 min read"
 featured: false
-featuredImage: "/static/images/CleanShot-2025-06-05-at-10.35.04@2x.png"
+featuredImage: "/images/CleanShot-2025-06-05-at-10.35.04@2x.png"
 description: "Pitfalls to watch out for when building container images from scratch."
 tags: ["containers", "docker", "go"]
 ---

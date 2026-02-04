@@ -4,7 +4,7 @@ slug: "how-to-transfer-an-entire-photos-library-to-a-new-apple-id"
 date: "2025-01-27"
 readingTime: "1 min read"
 featured: false
-featuredImage: "/static/images/CleanShot-2025-06-05-at-10.29.30@2x.png"
+featuredImage: "/images/CleanShot-2025-06-05-at-10.29.30@2x.png"
 description: "The most efficient approach for moving your Photos library to a new Apple ID without tedious manual backups."
 tags: ["apple", "photos", "tips"]
 ---
