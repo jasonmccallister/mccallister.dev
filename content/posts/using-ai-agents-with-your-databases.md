@@ -4,7 +4,7 @@ slug: "using-ai-agents-with-your-databases"
 date: "2025-06-04"
 readingTime: "2 min read"
 featured: true
-featuredImage: "https://mccallister.dev/content/images/size/w960/2025/06/CleanShot-2025-06-05-at-10.26.05@2x.png"
+featuredImage: "/static/images/CleanShot-2025-06-05-at-10.26.05@2x.png"
 description: "Learn how to build AI-powered workflows with Dagger that can query databases using natural language."
 tags: ["ai", "dagger", "databases"]
 ---
