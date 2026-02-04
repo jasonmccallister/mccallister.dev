@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "build": "npx tailwind build styles.css -o web/css/styles.css"
-  },
-  "dependencies": {
-    "serverless": "^1.58.0",
-    "tailwindcss": "^1.1.4"
-  }
-}
