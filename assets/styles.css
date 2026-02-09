@@ -40,6 +40,13 @@ pre code {
   @apply bg-transparent p-0;
 }
 
+/* Responsive iframe embeds (e.g. YouTube) */
+.prose iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
+}
+
 /* Terminal cursor blink effect */
 @keyframes blink {
   0%, 50% {

@@ -55,3 +55,5 @@ promoting team collaboration and scalability.
 
 Integrating AI directly into workflows enables intelligent, secure, observable
 pipelines suitable for code generation, testing, and deployment automation.
+
+<iframe src="https://www.youtube.com/embed/LzHE0QTkQsM?si=4EGIL5Gn0hsP105m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
