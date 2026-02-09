@@ -47,6 +47,26 @@ pre code {
   border-radius: 0.5rem;
 }
 
+/* Heading anchor links - make them inline */
+.prose h1 a.anchor,
+.prose h2 a.anchor,
+.prose h3 a.anchor,
+.prose h4 a.anchor,
+.prose h5 a.anchor,
+.prose h6 a.anchor {
+  @apply inline-block align-baseline no-underline opacity-80 transition-opacity;
+  margin-right: 0.50rem;
+}
+
+.prose h1:hover a.anchor,
+.prose h2:hover a.anchor,
+.prose h3:hover a.anchor,
+.prose h4:hover a.anchor,
+.prose h5:hover a.anchor,
+.prose h6:hover a.anchor {
+  @apply opacity-50;
+}
+
 /* Terminal cursor blink effect */
 @keyframes blink {
   0%, 50% {
