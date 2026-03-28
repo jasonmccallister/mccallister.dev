@@ -1,6 +1,7 @@
 import { define } from "@/utils.ts";
 import { Layout } from "@/components/Layout.tsx";
 import { PostCard } from "@/components/PostCard.tsx";
+import { SectionHeading } from "@/components/SectionHeading.tsx";
 import { getFeaturedPosts, getPosts } from "@/lib/content.ts";
 
 export default define.page(async function Home() {
@@ -12,6 +13,7 @@ export default define.page(async function Home() {
     <Layout
       title="mccallister.dev"
       description="Go, PHP, containers and technology"
+      currentPath="/"
     >
       <div class="space-y-12">
         {/* Hero Section */}
@@ -19,7 +21,7 @@ export default define.page(async function Home() {
           <h1 class="text-4xl font-bold mb-4">
             <span class="text-primary">&gt;</span> Jason McCallister
           </h1>
-          <p class="text-xl opacity-80 font-mono">
+          <p class="text-xl text-base-content/70 font-mono">
             Go, PHP, containers and technology
           </p>
           <div class="divider max-w-xs mx-auto">
@@ -30,15 +32,13 @@ export default define.page(async function Home() {
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
           <section>
-            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span class="text-primary font-mono">#</span> Featured
-            </h2>
+            <SectionHeading>Featured</SectionHeading>
             <div class="grid gap-6 md:grid-cols-2">
               {featuredPosts.map((post) => (
                 <PostCard
                   key={post.frontmatter.slug}
                   post={post}
-                  featured={true}
+                  featured
                 />
               ))}
             </div>
@@ -47,9 +47,7 @@ export default define.page(async function Home() {
 
         {/* Latest Posts */}
         <section>
-          <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-            <span class="text-primary font-mono">#</span> Latest
-          </h2>
+          <SectionHeading>Latest</SectionHeading>
           <div class="space-y-4">
             {latestPosts.map((post) => (
               <PostCard key={post.frontmatter.slug} post={post} />

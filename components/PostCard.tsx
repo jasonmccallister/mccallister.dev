@@ -15,7 +15,7 @@ export function PostCard({ post, featured = false }: PostCardProps) {
         <figure class="relative">
           <img
             src={frontmatter.featuredImage}
-            alt={frontmatter.title}
+            alt=""
             class="w-full h-48 object-cover"
             loading="lazy"
           />
@@ -32,14 +32,14 @@ export function PostCard({ post, featured = false }: PostCardProps) {
               {frontmatter.title}
             </a>
           </h2>
-          <div class="flex items-center gap-2 text-sm opacity-70 font-mono">
+          <div class="flex items-center gap-2 text-sm text-base-content/60 font-mono">
             <time datetime={frontmatter.date}>
               {formatDate(frontmatter.date)}
             </time>
             <span>•</span>
             <span>{frontmatter.readingTime}</span>
           </div>
-          <p class="text-base-content/80">{frontmatter.description}</p>
+          <p class="text-base-content/70">{frontmatter.description}</p>
           <div class="card-actions justify-start mt-2">
             {frontmatter.tags.map((tag) => (
               <span class="badge badge-outline badge-sm font-mono" key={tag}>
@@ -63,14 +63,14 @@ export function PostCard({ post, featured = false }: PostCardProps) {
             {frontmatter.title}
           </a>
         </h3>
-        <div class="flex items-center gap-2 text-sm opacity-70 font-mono">
+        <div class="flex items-center gap-2 text-sm text-base-content/60 font-mono">
           <time datetime={frontmatter.date}>
             {formatDate(frontmatter.date)}
           </time>
           <span>•</span>
           <span>{frontmatter.readingTime}</span>
         </div>
-        <p class="text-base-content/80 text-sm">{frontmatter.description}</p>
+        <p class="text-base-content/70 text-sm">{frontmatter.description}</p>
         <div class="card-actions justify-start mt-2">
           {frontmatter.tags.map((tag) => (
             <span class="badge badge-outline badge-xs font-mono" key={tag}>

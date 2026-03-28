@@ -6,23 +6,53 @@
 @theme {
   /* Retro theme customization for light mode */
   --color-retro-primary: #3432ee;
-}
 
-/* Custom retro-tech styling */
-.font-mono {
-  font-family:
+  /* Body font: readable, distinctive, not generic */
+  --font-sans:
+    "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
+  --font-mono:
     "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New",
     monospace;
 }
 
 /* Code block styling */
 pre code {
-  font-family:
-    "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Monaco, "Courier New",
-    monospace;
+  font-family: var(--font-mono);
 }
 
-/* Markdown content styling */
+/* Prose reading comfort & markdown content styling */
+.prose {
+  --tw-prose-body: currentColor;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.prose :is(h1, h2, h3, h4) {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.prose :is(h2) {
+  @apply text-2xl mt-8 mb-4;
+}
+
+.prose :is(h3) {
+  @apply text-xl mt-6 mb-3;
+}
+
+.prose p {
+  @apply leading-relaxed;
+}
+
+.prose a {
+  @apply text-primary no-underline;
+}
+
+.prose a:hover {
+  @apply underline;
+}
+
 .prose pre {
   @apply bg-base-300 border border-base-300 rounded-lg overflow-x-auto;
 }
@@ -40,6 +70,18 @@ pre code {
   @apply bg-transparent p-0;
 }
 
+.prose blockquote {
+  @apply border-l-primary bg-base-200 py-1 px-4;
+}
+
+.prose li::marker {
+  @apply text-primary;
+}
+
+.prose strong {
+  @apply text-base-content;
+}
+
 /* Responsive iframe embeds (e.g. YouTube) */
 .prose iframe {
   width: 100%;
@@ -54,8 +96,8 @@ pre code {
 .prose h4 a.anchor,
 .prose h5 a.anchor,
 .prose h6 a.anchor {
-  @apply inline-block align-baseline no-underline opacity-80 transition-opacity;
-  margin-right: 0.50rem;
+  @apply inline-block align-baseline no-underline opacity-40 transition-opacity;
+  margin-right: 0.5rem;
 }
 
 .prose h1:hover a.anchor,
@@ -64,50 +106,15 @@ pre code {
 .prose h4:hover a.anchor,
 .prose h5:hover a.anchor,
 .prose h6:hover a.anchor {
-  @apply opacity-50;
+  @apply opacity-100;
 }
 
-/* Terminal cursor blink effect */
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
+/* Post card hover effects */
+article.card {
+  @apply transition-transform duration-200;
 }
 
-.cursor-blink::after {
-  content: "█";
-  animation: blink 1s infinite;
-  @apply text-primary;
-}
-
-/* Retro scanline effect (subtle) */
-.scanlines::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
-  );
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Card hover effects */
-.card {
-  @apply transition-all duration-200;
-}
-
-.card:hover {
+article.card:hover {
   @apply -translate-y-0.5;
 }
 
@@ -121,6 +128,11 @@ a {
   @apply font-mono text-xs;
 }
 
+/* Active nav link */
+a[aria-current="page"] {
+  @apply text-primary;
+}
+
 /* Navbar transparency on scroll */
 .navbar {
   @apply backdrop-blur-sm;
@@ -131,7 +143,11 @@ a {
   @apply backdrop-blur-sm;
 }
 
-/* Custom scrollbar for webkit browsers */
+/* Custom scrollbar */
+* {
+  scrollbar-width: thin;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -153,6 +169,18 @@ a {
 a:focus-visible,
 button:focus-visible {
   @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Print styles */
