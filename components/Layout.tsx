@@ -1,4 +1,6 @@
 import type { ComponentChildren } from "preact";
+import BootSequence from "@/islands/BootSequence.tsx";
+import ScrollReveal from "@/islands/ScrollReveal.tsx";
 import ThemeToggle from "@/islands/ThemeToggle.tsx";
 
 const NAV_LINKS = [
@@ -73,6 +75,8 @@ export function Layout({
         />
       </head>
       <body class="min-h-screen bg-base-100 text-base-content">
+        <BootSequence />
+        <ScrollReveal />
         <a
           href="#main-content"
           class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-content focus:rounded"

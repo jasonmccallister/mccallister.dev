@@ -109,6 +109,49 @@ pre code {
   @apply opacity-100;
 }
 
+/* Page entrance animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-delay-1 {
+  animation-delay: 100ms;
+}
+.animate-delay-2 {
+  animation-delay: 200ms;
+}
+.animate-delay-3 {
+  animation-delay: 350ms;
+}
+.animate-delay-4 {
+  animation-delay: 500ms;
+}
+
+/* Scroll-triggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Post card hover effects */
 article.card {
   @apply transition-transform duration-200;
