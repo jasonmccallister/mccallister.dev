@@ -8,7 +8,7 @@ export default function ThemeToggle() {
     // Check initial theme
     const savedTheme = localStorage.getItem("theme");
     const prefersDark =
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
+      globalThis.matchMedia("(prefers-color-scheme: dark)").matches;
     const initialDark = savedTheme === "dark" || (!savedTheme && prefersDark);
     isDark.value = initialDark;
     document.documentElement.setAttribute(
@@ -26,9 +26,12 @@ export default function ThemeToggle() {
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
       class="btn btn-ghost btn-circle swap swap-rotate"
-      aria-label="Toggle theme"
+      aria-label={isDark.value
+        ? "Switch to light theme"
+        : "Switch to dark theme"}
     >
       {isDark.value
         ? (

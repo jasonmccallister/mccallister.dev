@@ -1,5 +1,6 @@
 import { define } from "@/utils.ts";
 import { Layout } from "@/components/Layout.tsx";
+import { ProseContent } from "@/components/ProseContent.tsx";
 import { formatDate, getPost } from "@/lib/content.ts";
 import { HttpError, page } from "fresh";
 
@@ -27,7 +28,12 @@ export default define.page<typeof handler>(function PostPage({ data }) {
   const { frontmatter, html } = post;
 
   return (
-    <Layout title={frontmatter.title} description={frontmatter.description}>
+    <Layout
+      title={frontmatter.title}
+      description={frontmatter.description}
+      ogImage={frontmatter.featuredImage}
+      currentPath={`/${frontmatter.slug}`}
+    >
       <article class="max-w-none">
         {/* Post Header */}
         <header class="mb-8">
@@ -44,7 +50,7 @@ export default define.page<typeof handler>(function PostPage({ data }) {
           <h1 class="text-3xl md:text-4xl font-bold mb-4">
             {frontmatter.title}
           </h1>
-          <div class="flex items-center gap-4 text-sm opacity-70 font-mono">
+          <div class="flex items-center gap-4 text-sm text-base-content/60 font-mono">
             <time datetime={frontmatter.date}>
               {formatDate(frontmatter.date)}
             </time>
@@ -58,28 +64,15 @@ export default define.page<typeof handler>(function PostPage({ data }) {
           <figure class="mb-8 rounded-lg overflow-hidden border border-base-300">
             <img
               src={frontmatter.featuredImage}
-              alt={frontmatter.title}
+              alt={`Featured image for ${frontmatter.title}`}
               class="w-full"
-              loading="lazy"
+              loading="eager"
             />
           </figure>
         )}
 
         {/* Post Content */}
-        <div
-          class="prose prose-lg max-w-none
-            prose-headings:font-bold
-            prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4
-            prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-            prose-p:leading-relaxed
-            prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-            prose-code:bg-base-300 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm
-            prose-pre:bg-base-300 prose-pre:border prose-pre:border-base-300
-            prose-blockquote:border-l-primary prose-blockquote:bg-base-200 prose-blockquote:py-1 prose-blockquote:px-4
-            prose-li:marker:text-primary
-            prose-strong:text-base-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <ProseContent html={html} />
 
         {/* Back Link */}
         <div class="mt-12 pt-8 border-t border-base-300">
