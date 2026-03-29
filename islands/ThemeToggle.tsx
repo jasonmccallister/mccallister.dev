@@ -29,7 +29,9 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       class="btn btn-ghost btn-circle swap swap-rotate"
-      aria-label="Toggle theme"
+      aria-label={isDark.value
+        ? "Switch to light theme"
+        : "Switch to dark theme"}
     >
       {isDark.value
         ? (

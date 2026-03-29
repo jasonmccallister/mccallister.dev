@@ -64,7 +64,7 @@ export default define.page<typeof handler>(function PostPage({ data }) {
           <figure class="mb-8 rounded-lg overflow-hidden border border-base-300">
             <img
               src={frontmatter.featuredImage}
-              alt=""
+              alt={`Featured image for ${frontmatter.title}`}
               class="w-full"
               loading="eager"
             />

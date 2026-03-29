@@ -20,7 +20,8 @@ interface LayoutProps {
 export function Layout({
   children,
   title = "mccallister.dev",
-  description = "Go, PHP, containers and technology",
+  description =
+    "Writing about Go, PHP, containers, cloud infrastructure, and AI",
   ogImage,
   currentPath = "/",
 }: LayoutProps) {

@@ -19,7 +19,10 @@ export default define.page<typeof handler>(function AppearancesPage({ data }) {
     return (
       <Layout title="Not Found">
         <div class="text-center py-16">
-          <p>Page not found</p>
+          <p class="mb-4">This page couldn't be loaded.</p>
+          <a href="/" class="btn btn-primary btn-sm font-mono">
+            <span class="text-primary-content">&lt;-</span> Back to posts
+          </a>
         </div>
       </Layout>
     );

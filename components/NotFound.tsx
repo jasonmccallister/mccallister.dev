@@ -119,14 +119,14 @@ export function NotFound(props: { path: string }) {
         {/* Action buttons */}
         <div class="mt-4 flex flex-col sm:flex-row gap-3 justify-center">
           <a href="/" class="btn btn-primary">
-            <span class="text-lg mr-1">&lt;-</span> cd /home
+            <span class="text-lg mr-1">&lt;-</span> cd ~/blog
           </a>
           <button
             type="button"
             onClick={() => history.back()}
             class="btn btn-outline"
           >
-            <span class="text-lg mr-1">!</span> retry last command
+            <span class="text-lg mr-1">!</span> go back
           </button>
         </div>
       </div>

@@ -15,7 +15,7 @@ export function PostCard({ post, featured = false }: PostCardProps) {
         <figure class="relative">
           <img
             src={frontmatter.featuredImage}
-            alt=""
+            alt={`Featured image for ${frontmatter.title}`}
             class="w-full h-48 object-cover"
             loading="lazy"
           />

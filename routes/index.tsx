@@ -12,7 +12,7 @@ export default define.page(async function Home() {
   return (
     <Layout
       title="mccallister.dev"
-      description="Go, PHP, containers and technology"
+      description="Writing about Go, PHP, containers, cloud infrastructure, and AI"
       currentPath="/"
     >
       <div class="space-y-12">
@@ -22,7 +22,7 @@ export default define.page(async function Home() {
             <span class="text-primary">&gt;</span> Jason McCallister
           </h1>
           <p class="text-xl text-base-content/70 font-mono animate-fade-up animate-delay-1">
-            Go, PHP, containers and technology
+            Go, PHP, containers, cloud infrastructure, and AI
           </p>
           <div class="divider max-w-xs mx-auto animate-fade-up animate-delay-2">
             <span class="text-primary font-mono text-sm">~/blog</span>
