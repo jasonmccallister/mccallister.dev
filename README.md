@@ -1,17 +1,54 @@
-# Fresh project
+# mccallister.dev
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+Personal blog built with Laravel, Blade, Tailwind CSS v4, and DaisyUI.
 
-### Usage
+## Local development
 
-Make sure to install Deno:
-https://docs.deno.com/runtime/getting_started/installation
+Requirements: PHP 8.3+, Composer, Node.js 20+.
 
-Then start the project in development mode:
-
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+npm install
+composer run dev
 ```
-deno task dev
+
+Visit [http://localhost:8000](http://localhost:8000).
+
+## Content
+
+- Posts: `content/posts/*.md`
+- Pages: `content/pages/*.md`
+
+Front matter fields for posts: `title`, `slug`, `date`, `readingTime`, `featured`, `featuredImage`, `description`, `tags`.
+
+## Commands
+
+| Command | Purpose |
+|---------|---------|
+| `composer run dev` | Local app + Vite |
+| `npm run build` | Production assets |
+| `php artisan test` | Run Pest tests |
+| `vendor/bin/pint` | Format PHP |
+
+## Laravel Cloud
+
+Connect this repository in [Laravel Cloud](https://cloud.laravel.com) with a PHP runtime matching `composer.json`.
+
+Suggested build commands:
+
+```sh
+composer install --no-dev
+npm ci --audit false
+npm run build
+php artisan optimize
 ```
 
-This will watch the project directory and restart as necessary.
+Suggested deploy command (if using a database):
+
+```sh
+php artisan migrate --force
+```
+
+Set at least `APP_KEY` in the environment. Content lives in the repo under `content/`, so no database is required for posts.
