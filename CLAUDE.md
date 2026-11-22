@@ -5,8 +5,8 @@
 
 - This is a personal markdown-driven blog. Prefer editing files under `content/` over introducing a database CMS.
 - Keep post URLs at the site root (`/{slug}`). Register static routes before the `{slug}` catch-all.
-- Preserve the DaisyUI retro + dark theme, primary `#3432ee`, Source Sans body, mono accents.
-- Do not reintroduce a boot/splash screen.
+- Visual direction: freek.dev-inspired — IBM Plex Sans + Mono, coral accent `#F87171`, bold titles, pill tags; no DaisyUI or terminal motifs.
+- Do not reintroduce a boot/splash screen or prompt-style chrome (`>_`, fake shell blocks).
 - Deploy target is Laravel Cloud: build with Composer + `npm run build` + `php artisan optimize`.
 
 === foundation rules ===
@@ -170,7 +170,8 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 
 # mccallister.dev
 
-Personal dev blog: Laravel + Blade + Tailwind v4 + DaisyUI, markdown content in `content/`.
+Personal dev blog: Laravel + Blade + Tailwind v4, markdown content in `content/`.
+Freek.dev-inspired sans design (IBM Plex); no DaisyUI or terminal chrome.
 
 ## Commands
 
@@ -193,18 +194,17 @@ inviting. Not corporate, not trying too hard.
 
 ### Aesthetic Direction
 
-- Retro terminal accents as personality touches, proportional readable body text
-  for long-form content
-- Reference: Julia Evans (jvns.ca) — playful, personal, highly readable
-- DaisyUI "retro" (light) + custom dark mode. Primary `#3432ee`
+- Sans-first blog inspired by freek.dev (not a layout clone)
+- IBM Plex Sans + Mono; extrabold titles; coral accent `#F87171`
+- White/black surfaces, gray meta, pill tags
+- No DaisyUI, terminal mockups, prompt prefixes, or flashy motion
 
 ### Design Principles
 
 1. **Readability first** — Typography must be comfortable for 5-10 minute reads
-2. **Terminal as accent** — Monospace for code and navigation flourishes, not
-   body text
-3. **Personal over polished** — Charm and personality over corporate perfection
-4. **Content-forward** — Design disappears when reading
+2. **Content-forward** — Design disappears when reading
+3. **Quiet chrome** — Header, footer, and links stay out of the way
+4. **Restrained color** — Ink, paper, one muted accent
 5. **Respect the reader** — Accessible, fast, no tricks
 
 ## Content

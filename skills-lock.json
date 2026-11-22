@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "skills": {
+    "unslop": {
+      "source": "mnapoli/skills",
+      "commit": "036f32c6ce2b4754c73f8c9b39cac5c46ef2f8b5",
+      "sourceType": "github",
+      "skillPath": "unslop/SKILL.md",
+      "computedHash": "968c96039c644d8e87f61f0c8d63a200e0c5e2116ed5cf69093c79d489d986c7"
+    }
+  }
+}

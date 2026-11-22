@@ -4,27 +4,33 @@
 @section('description', $page->description)
 
 @section('content')
-    <div class="max-w-none">
-        <h1 class="text-3xl md:text-4xl font-bold mb-8 font-mono">
-            <span class="text-primary">&gt;</span> {{ $page->title }}
+    <article>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-8">
+            {{ $page->title }}
         </h1>
 
-        <div class="prose prose-lg max-w-none">
+        <div class="prose">
             {!! $page->html !!}
         </div>
 
-        <div class="mt-12">
-            <h2 class="text-2xl font-bold mb-6 font-mono">
-                <span class="text-primary">#</span> Skills
+        <section class="mt-12 pt-8 border-t border-rule">
+            <h2 class="text-2xl font-extrabold tracking-tight mb-6">
+                Skills
             </h2>
-            <div class="mockup-code bg-base-300">
-                <pre data-prefix="$" class="text-primary"><code>cat skills.json | jq '.languages'</code></pre>
-                <pre data-prefix=">" class="text-success"><code>["Go", "PHP", "TypeScript", "Python", "Bash"]</code></pre>
-                <pre data-prefix="$" class="text-primary"><code>cat skills.json | jq '.tools'</code></pre>
-                <pre data-prefix=">" class="text-warning"><code>["Docker", "Kubernetes", "Dagger", "Git", "CI/CD"]</code></pre>
-                <pre data-prefix="$" class="text-primary"><code>cat skills.json | jq '.cloud'</code></pre>
-                <pre data-prefix=">" class="text-info"><code>["AWS", "GCP", "Azure", "Terraform"]</code></pre>
-            </div>
-        </div>
-    </div>
+            <dl class="space-y-5 text-base">
+                <div>
+                    <dt class="text-sm font-semibold text-muted mb-1">Languages</dt>
+                    <dd class="text-ink">Go, PHP, TypeScript, Python, Bash</dd>
+                </div>
+                <div>
+                    <dt class="text-sm font-semibold text-muted mb-1">Tools</dt>
+                    <dd class="text-ink">Docker, Kubernetes, Dagger, Git, CI/CD</dd>
+                </div>
+                <div>
+                    <dt class="text-sm font-semibold text-muted mb-1">Cloud</dt>
+                    <dd class="text-ink">AWS, GCP, Azure, Terraform</dd>
+                </div>
+            </dl>
+        </section>
+    </article>
 @endsection

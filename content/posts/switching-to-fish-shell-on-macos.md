@@ -1,82 +1,72 @@
 ---
-title: "Switching to Fish Shell on macOS"
+title: "Switching to Fish shell on macOS"
 slug: "switching-to-fish-shell-on-macos"
 date: "2025-07-22"
 readingTime: "3 min read"
 featured: true
 featuredImage: "/images/CleanShot-2025-07-22-at-10.51.34@2x-1.png"
-description: "A guide to transitioning from ZSH to Fish Shell on macOS, covering installation, configuration, and recovery tips."
+description: "Install Fish on macOS, set it as your login shell, and recover if chsh goes wrong."
 tags: ["shell", "macos", "fish"]
 ---
 
-I recently made the switch from ZSH to Fish Shell after hearing Mitchell
-Hashimoto discuss it on the Fallthrough Podcast regarding Ghostty terminal
-development.
+I switched from zsh to Fish after Mitchell Hashimoto talked about it on the Fallthrough Podcast while working on Ghostty.
 
-## Why Fish Shell?
+## Why Fish
 
-Three key features motivated this change:
+A few things sold me:
 
-### 1. Web-based Configuration Interface
+### Web config
 
-The built-in `fish_config` command launches a web UI for managing themes,
-prompts, and variables, making customization accessible regardless of technical
-experience level.
+`fish_config` opens a browser UI for themes, prompts, and variables. Easier than poking at config files for every tweak.
 
-### 2. Syntax Highlighting Feedback
+### Syntax highlighting as you type
 
-As users type commands and navigate directories, Fish provides immediate visual
-feedback, displaying invalid commands in red by default.
+Invalid commands turn red while you're still typing. That alone cuts a lot of silly typos.
 
-### 3. Private Mode Functionality
+### Private mode
 
-This feature prevents command history from being retained during specific
-sessions, proving valuable for demonstrations and tutorials where
-reproducibility matters.
+You can run a session that doesn't keep history. Handy for demos where you don't want noise in your shell history afterward.
 
-## Installation Process
+## Install
 
-Using Homebrew, installation requires:
+With Homebrew:
 
 ```bash
 brew install fish
 ```
 
-Verification uses:
+Check the path:
 
 ```bash
 type fish
 ```
 
-Expected output: `/opt/homebrew/bin/fish`
+You should see `/opt/homebrew/bin/fish` on Apple Silicon.
 
-## Changing Default Shell
+## Change the default shell
 
-The standard command is:
+Try:
 
 ```bash
 chsh -s /opt/homebrew/bin/fish
 ```
 
-However, macOS security restrictions typically produce a "non-standard shell"
-message. To resolve this, add Fish to the allowed shells list:
+macOS often rejects that with a "non-standard shell" message. Add Fish to `/etc/shells` first:
 
 ```bash
 sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
 ```
 
-Then retry the shell change command.
+Then run `chsh` again.
 
-## Recovering from Shell Configuration Errors
+## If you lock yourself out
 
-If an incorrect path is set, macOS provides a recovery option through System
-Settings:
+If the login shell path is wrong, fix it in System Settings:
 
 1. Open Settings
 2. Search for "Users & Groups"
 3. Control-click your user photo
-4. Select "Advanced Settings"
-5. Modify the Login shell setting back to the default shell
+4. Choose Advanced Settings
+5. Set Login shell back to something safe (like `/bin/zsh`)
 
-This hidden feature allows terminal access restoration without requiring
-system-level intervention.
+That gets you a terminal again without digging through recovery tools.

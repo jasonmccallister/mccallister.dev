@@ -1,7 +1,4 @@
 @import 'tailwindcss';
-@plugin 'daisyui' {
-    themes: retro --default, dark --prefersdark;
-}
 @plugin '@tailwindcss/typography';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -10,65 +7,160 @@
 @source '../**/*.js';
 
 @theme {
-    --color-retro-primary: #3432ee;
+    --color-paper: #f6f7fb;
+    --color-ink: #1a2332;
+    --color-muted: #5b6b7c;
+    --color-link: #c45c5c;
+    --color-rule: #dde3ec;
+    --color-code-bg: #1e293b;
+    --color-code-fg: #e2e8f0;
+    --color-accent: #d4545a;
+    --color-accent-soft: #f3e4e5;
+    --color-tag-bg: #f3e4e5;
+    --color-tag-fg: #9f3d42;
+    --color-surface: #ffffff;
     --font-sans:
-        'Source Sans 3', 'Source Sans Pro', 'Segoe UI', system-ui, sans-serif;
+        'IBM Plex Sans', 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
     --font-mono:
-        'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Monaco, 'Courier New',
-        monospace;
+        'IBM Plex Mono', 'SF Mono', Menlo, Monaco, Consolas, monospace;
 }
 
-[data-theme='retro'] {
-    --color-primary: #3432ee;
-    --color-primary-content: #ffffff;
+@layer base {
+    html {
+        @apply scroll-smooth antialiased;
+    }
+
+    body {
+        @apply bg-paper text-ink font-sans text-[20px] leading-normal;
+        background-image:
+            radial-gradient(
+                ellipse 90% 55% at 100% -10%,
+                color-mix(in srgb, var(--color-accent) 14%, transparent),
+                transparent 55%
+            ),
+            radial-gradient(
+                ellipse 70% 40% at 0% 100%,
+                color-mix(in srgb, #7aa2d4 10%, transparent),
+                transparent 50%
+            );
+        background-attachment: fixed;
+    }
+
+    html.dark {
+        --color-paper: #0b0f16;
+        --color-ink: #e8edf5;
+        --color-muted: #9aa8b8;
+        --color-link: #f0a0a4;
+        --color-rule: #243041;
+        --color-code-bg: #151b26;
+        --color-code-fg: #dbe4f0;
+        --color-accent: #f08186;
+        --color-accent-soft: #2a1c20;
+        --color-tag-bg: #2a1c20;
+        --color-tag-fg: #f0a0a4;
+        --color-surface: #121821;
+    }
+
+    ::selection {
+        background-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+        color: var(--color-ink);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        @apply outline-2 outline-offset-2;
+        outline-color: var(--color-accent);
+    }
 }
 
 [x-cloak] {
     display: none !important;
 }
 
-pre code {
-    font-family: var(--font-mono);
+.site-chrome {
+    background-color: color-mix(in srgb, var(--color-paper) 88%, var(--color-surface));
+    border-color: var(--color-rule);
+}
+
+.site-mark-dot {
+    color: var(--color-accent);
+}
+
+.site-nav-link {
+    @apply no-underline transition-colors duration-150;
+    color: var(--color-muted);
+}
+
+.site-nav-link:hover {
+    color: var(--color-accent);
+}
+
+.site-nav-link[aria-current='page'] {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.tag {
+    @apply inline-block rounded-full px-2.5 py-0.5 text-xs font-medium tracking-wide;
+    background-color: var(--color-tag-bg);
+    color: var(--color-tag-fg);
 }
 
 .prose {
-    --tw-prose-body: currentColor;
+    --tw-prose-body: #3d4a5c;
+    --tw-prose-headings: var(--color-ink);
+    --tw-prose-links: var(--color-link);
+    --tw-prose-bold: var(--color-ink);
+    --tw-prose-quotes: var(--color-ink);
+    --tw-prose-code: var(--color-ink);
+    --tw-prose-pre-bg: var(--color-code-bg);
+    --tw-prose-pre-code: var(--color-code-fg);
+    --tw-prose-hr: var(--color-rule);
+    --tw-prose-bullets: color-mix(in srgb, var(--color-accent) 45%, #c5cdd8);
+    --tw-prose-counters: var(--color-muted);
+    --tw-prose-quote-borders: color-mix(in srgb, var(--color-accent) 55%, var(--color-rule));
+    font-family: var(--font-sans);
     font-size: 1.125rem;
-    line-height: 1.7;
+    line-height: 1.75;
+    max-width: 70ch;
+}
+
+html.dark .prose {
+    --tw-prose-body: #c5d0de;
+    --tw-prose-bullets: color-mix(in srgb, var(--color-accent) 40%, #4b5563);
 }
 
 .prose :is(h1, h2, h3, h4) {
-    font-weight: 700;
+    font-family: var(--font-sans);
+    font-weight: 800;
     line-height: 1.2;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
 }
 
 .prose :is(h2) {
-    @apply text-2xl mt-8 mb-4;
+    @apply text-2xl mt-10 mb-4;
+    font-weight: 700;
 }
 
 .prose :is(h3) {
-    @apply text-xl mt-6 mb-3;
-}
-
-.prose p {
-    @apply leading-relaxed;
+    @apply text-xl mt-8 mb-3;
+    font-weight: 600;
 }
 
 .prose a {
-    @apply text-primary no-underline;
+    @apply underline underline-offset-2 font-medium;
+    text-decoration-color: color-mix(in srgb, var(--color-link) 40%, transparent);
 }
 
 .prose a:hover {
-    @apply underline;
-}
-
-.prose pre {
-    @apply bg-base-300 border border-base-300 rounded-lg overflow-x-auto;
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
 }
 
 .prose code {
-    @apply bg-base-300 px-1.5 py-0.5 rounded text-sm font-mono;
+    font-family: var(--font-mono);
+    @apply text-[0.875em] font-semibold px-1 py-0.5 rounded-sm;
+    background-color: var(--color-accent-soft);
 }
 
 .prose code::before,
@@ -76,26 +168,29 @@ pre code {
     content: none;
 }
 
+.prose pre {
+    @apply rounded-md overflow-x-auto;
+    background-color: var(--color-code-bg);
+}
+
 .prose pre code {
-    @apply bg-transparent p-0;
+    @apply bg-transparent p-0 font-normal;
+    color: var(--color-code-fg);
 }
 
 .prose blockquote {
-    @apply border-l-primary bg-base-200 py-1 px-4;
-}
-
-.prose li::marker {
-    @apply text-primary;
-}
-
-.prose strong {
-    @apply text-base-content;
+    @apply pl-4 not-italic font-medium;
+    border-left: 1px solid color-mix(in srgb, var(--color-accent) 55%, var(--color-rule));
+    background-color: color-mix(in srgb, var(--color-accent-soft) 55%, transparent);
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .prose iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
 }
 
 .prose h1 a.anchor,
@@ -104,8 +199,8 @@ pre code {
 .prose h4 a.anchor,
 .prose h5 a.anchor,
 .prose h6 a.anchor {
-    @apply inline-block align-baseline no-underline opacity-40 transition-opacity;
-    margin-right: 0.5rem;
+    @apply inline-block align-baseline no-underline opacity-30 transition-opacity mr-2;
+    color: var(--color-accent);
 }
 
 .prose h1:hover a.anchor,
@@ -114,119 +209,30 @@ pre code {
 .prose h4:hover a.anchor,
 .prose h5:hover a.anchor,
 .prose h6:hover a.anchor {
-    @apply opacity-100;
-}
-
-@keyframes fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(1rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-up {
-    animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-delay-1 {
-    animation-delay: 100ms;
-}
-.animate-delay-2 {
-    animation-delay: 200ms;
-}
-.animate-delay-3 {
-    animation-delay: 350ms;
-}
-.animate-delay-4 {
-    animation-delay: 500ms;
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(1rem);
-    transition:
-        opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-article.card {
-    @apply transition-transform duration-200;
-}
-
-article.card:hover {
-    @apply -translate-y-0.5;
-}
-
-a {
-    @apply transition-colors duration-150;
-}
-
-.badge {
-    @apply font-mono text-xs;
-}
-
-a[aria-current='page'] {
-    @apply text-primary;
-}
-
-.navbar {
-    @apply backdrop-blur-sm;
-}
-
-.drawer-side {
-    @apply backdrop-blur-sm;
-}
-
-* {
-    scrollbar-width: thin;
-}
-
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    @apply bg-base-200;
-}
-
-::-webkit-scrollbar-thumb {
-    @apply bg-base-300 rounded;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/50;
-}
-
-a:focus-visible,
-button:focus-visible {
-    @apply outline-2 outline-offset-2 outline-primary;
+    @apply opacity-80;
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
     }
 }
 
 @media print {
-    .navbar,
-    .footer,
-    .drawer-side {
+    body {
+        background-image: none;
+    }
+
+    header,
+    footer {
         display: none !important;
     }
 

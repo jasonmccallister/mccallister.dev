@@ -1,33 +1,31 @@
-<footer class="footer footer-center p-6 bg-base-200 text-base-content border-t border-base-300 font-mono">
-    <aside>
-        <p>
-            <span class="text-primary">&gt;</span> mccallister.dev &copy; {{ now()->year }}
-        </p>
-        <div class="flex gap-4 mt-2">
+<footer class="site-chrome border-t mt-auto">
+    <div class="w-full max-w-3xl mx-auto px-5 py-8 text-sm text-muted font-sans">
+        <p class="mb-3">&copy; {{ now()->year }} Jason McCallister</p>
+        <div class="flex flex-wrap gap-4">
             <a
                 href="https://github.com/jasonmccallister"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="link link-hover hover:text-primary"
+                class="site-nav-link"
             >
-                GitHub<span class="sr-only">(opens in new tab)</span>
+                GitHub<span class="sr-only"> (opens in new tab)</span>
             </a>
             <a
                 href="https://x.com/mccallisterdev"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="link link-hover hover:text-primary"
+                class="site-nav-link"
             >
-                X<span class="sr-only">(opens in new tab)</span>
+                X<span class="sr-only"> (opens in new tab)</span>
             </a>
             <a
                 href="https://www.linkedin.com/in/jason-mccallister/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="link link-hover hover:text-primary"
+                class="site-nav-link"
             >
-                LinkedIn<span class="sr-only">(opens in new tab)</span>
+                LinkedIn<span class="sr-only"> (opens in new tab)</span>
             </a>
         </div>
-    </aside>
+    </div>
 </footer>

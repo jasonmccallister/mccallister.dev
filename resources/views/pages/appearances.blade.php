@@ -4,13 +4,13 @@
 @section('description', $page->description)
 
 @section('content')
-    <div class="max-w-none">
-        <h1 class="text-3xl md:text-4xl font-bold mb-8 font-mono">
-            <span class="text-primary">&gt;</span> {{ $page->title }}
+    <article>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-8">
+            {{ $page->title }}
         </h1>
 
-        <div class="prose prose-lg max-w-none">
+        <div class="prose">
             {!! $page->html !!}
         </div>
-    </div>
+    </article>
 @endsection

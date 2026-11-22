@@ -1,44 +1,32 @@
 ---
-title: "How to Transfer an Entire Photos Library to a New Apple ID"
+title: "How to transfer an entire Photos library to a new Apple ID"
 slug: "how-to-transfer-an-entire-photos-library-to-a-new-apple-id"
 date: "2025-01-27"
 readingTime: "1 min read"
 featured: false
 featuredImage: "/images/CleanShot-2025-06-05-at-10.29.30@2x.png"
-description: "The most efficient approach for moving your Photos library to a new Apple ID without tedious manual backups."
+description: "Move a Photos library to a new Apple ID without exporting everything by hand."
 tags: ["apple", "photos", "tips"]
 ---
 
-Switching to a new Apple ID presents challenges when transferring your entire
-Photos library. While Apple offers some tools, they can be unintuitive. This
-guide explains the most efficient approach for moving your Photos library
-without tedious manual backups.
+Moving a full Photos library to a new Apple ID is awkward. Apple's tools aren't obvious, and copying albums by hand is slow.
 
-## Avoiding the Manual Backup Problem
+## Don't batch-copy forever
 
-I initially attempted copying photos in batches, discovering that Apple
-restricts bulk transfers to approximately 1,000 photos at a time. After
-completing a manual backup, I discovered a more efficient hidden option that
-streamlines the entire process to just a few straightforward steps.
+I tried moving photos in chunks first. Apple caps bulk adds around 1,000 photos at a time. After grinding through a manual backup, I found a Shared Library trick that finishes in a few steps.
 
-## Steps to Transfer Your Photos Library
+## Steps
 
-### Step 1: Share the Library with the New Apple ID
+### 1. Share the library with the new Apple ID
 
-Open the Photos app on your current Apple ID and establish a Shared Library.
-Invite your new Apple ID to participate in this shared library.
+On the current Apple ID, open Photos and create a Shared Library. Invite the new Apple ID.
 
-### Step 2: Accept the Invitation with the New Apple ID
+### 2. Accept on the new Apple ID
 
-Sign in using your new Apple ID, open the invitation, and accept it. Allow the
-Photos app to synchronize the shared library content.
+Sign in as the new Apple ID, open the invite, and accept. Let Photos sync the shared library.
 
-### Step 3: Leave the Shared Library on the New Apple ID
+### 3. Leave the shared library and keep the photos
 
-After synchronization finishes, exit the Shared Library from your new Apple ID.
-When prompted, select the option to **"copy all shared photos to your
-library."**
+When sync is done, leave the Shared Library on the new Apple ID. Choose **"copy all shared photos to your library"** when asked.
 
-This approach leverages Apple's Shared Library functionality to transfer photos
-when departing the shared library—significantly faster and more reliable than
-manual export or backup methods.
+Leaving the shared library that way copies the photos into the new account. It's faster than exporting and re-importing.

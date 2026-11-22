@@ -15,7 +15,9 @@
 /.phpunit.cache
 /.vscode
 /.zed
-/.agents
+/.agents/*
+!/.agents/skills/
+!/.agents/skills/**
 /.pi
 /opencode.json
 .mcp.json

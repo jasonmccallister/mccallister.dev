@@ -1,6 +1,6 @@
 # mccallister.dev
 
-Personal blog built with Laravel, Blade, Tailwind CSS v4, and DaisyUI.
+Personal blog built with Laravel, Blade, and Tailwind CSS v4.
 
 ## Local development
 

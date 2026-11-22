@@ -13,27 +13,29 @@
 @endpush
 
 @section('content')
-    <article class="max-w-none">
+    <article>
         <header class="mb-8">
-            <div class="flex flex-wrap gap-2 mb-4">
-                @foreach ($post->tags as $tag)
-                    <span class="badge badge-primary badge-outline font-mono">{{ $tag }}</span>
-                @endforeach
-            </div>
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">
+            @if (count($post->tags))
+                <div class="flex flex-wrap gap-2 mb-4">
+                    @foreach ($post->tags as $tag)
+                        <span class="tag">{{ $tag }}</span>
+                    @endforeach
+                </div>
+            @endif
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-3">
                 {{ $post->title }}
             </h1>
-            <div class="flex items-center gap-4 text-sm text-base-content/60 font-mono">
+            <p class="text-sm text-muted">
                 <time datetime="{{ $post->date }}">
                     {{ \App\Content\ContentRepository::formatDate($post->date) }}
                 </time>
-                <span>•</span>
+                <span aria-hidden="true"> – </span>
                 <span>{{ $post->readingTime }}</span>
-            </div>
+            </p>
         </header>
 
         @if ($post->featuredImage)
-            <figure class="mb-8 rounded-lg overflow-hidden border border-base-300">
+            <figure class="mb-8 overflow-hidden rounded-md">
                 <img
                     src="{{ $post->featuredImage }}"
                     alt="Featured image for {{ $post->title }}"
@@ -43,14 +45,14 @@
             </figure>
         @endif
 
-        <div class="prose prose-lg max-w-none">
+        <div class="prose">
             {!! $post->html !!}
         </div>
 
-        <div class="mt-12 pt-8 border-t border-base-300">
-            <a href="{{ route('home') }}" class="btn btn-outline btn-sm font-mono">
-                <span class="text-primary">&lt;-</span> Back to all posts
+        <p class="mt-12 pt-8 border-t border-rule text-sm">
+            <a href="{{ route('home') }}" class="site-nav-link">
+                ← All posts
             </a>
-        </div>
+        </p>
     </article>
 @endsection
