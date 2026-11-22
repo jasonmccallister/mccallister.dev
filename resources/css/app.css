@@ -188,8 +188,12 @@ html.dark .prose {
 }
 
 .prose iframe {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
+    border: 0;
     border-radius: 0.375rem;
 }
 

@@ -21,6 +21,19 @@ class ContentRepository
         $environment = new Environment([
             'html_input' => 'allow',
             'allow_unsafe_links' => false,
+            // GFM escapes iframe by default; allow embeds while keeping other raw tags blocked.
+            'disallowed_raw_html' => [
+                'disallowed_tags' => [
+                    'title',
+                    'textarea',
+                    'style',
+                    'xmp',
+                    'noembed',
+                    'noframes',
+                    'script',
+                    'plaintext',
+                ],
+            ],
             'heading_permalink' => [
                 'html_class' => 'anchor',
                 'id_prefix' => '',

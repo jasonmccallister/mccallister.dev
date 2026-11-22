@@ -43,4 +43,11 @@ You build small functions and compose them. Teammates can reuse the same modules
 
 Here's a short demo of asking a database questions in plain English from a Dagger workflow:
 
-<iframe src="https://www.youtube.com/embed/LzHE0QTkQsM?si=4EGIL5Gn0hsP105m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+    src="https://www.youtube.com/embed/LzHE0QTkQsM?si=4EGIL5Gn0hsP105m"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    loading="lazy"
+></iframe>

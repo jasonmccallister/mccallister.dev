@@ -44,6 +44,14 @@ it('renders every markdown post', function () {
     }
 });
 
+it('renders youtube iframes in post markdown without escaping them', function () {
+    $this->get('/using-ai-agents-with-your-databases')
+        ->assertOk()
+        ->assertSee('<iframe', false)
+        ->assertSee('https://www.youtube.com/embed/LzHE0QTkQsM', false)
+        ->assertDontSee('&lt;iframe', false);
+});
+
 it('returns a quiet 404 for unknown routes', function () {
     $this->get('/this-page-does-not-exist')
         ->assertNotFound()
