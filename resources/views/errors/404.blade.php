@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Page not found | mccallister.dev')
-@section('description', 'Page not found')
-
 @section('content')
     <div>
         <h1 class="text-3xl font-extrabold tracking-tight mb-3">

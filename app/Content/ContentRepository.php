@@ -91,6 +91,36 @@ class ContentRepository
         return $this->posts()->filter(fn (Post $post) => $post->featured)->values();
     }
 
+    /**
+     * @return Collection<int, Page>
+     */
+    public function pages(): Collection
+    {
+        $pagesPath = base_path('content/pages');
+
+        if (! is_dir($pagesPath)) {
+            return collect();
+        }
+
+        $finder = (new Finder)
+            ->files()
+            ->in($pagesPath)
+            ->name('*.md');
+
+        $pages = collect();
+
+        foreach ($finder as $file) {
+            $slug = $file->getBasename('.md');
+            $page = $this->page($slug);
+
+            if ($page !== null) {
+                $pages->push($page);
+            }
+        }
+
+        return $pages->sortBy(fn (Page $page) => $page->slug)->values();
+    }
+
     public function page(string $slug): ?Page
     {
         $path = base_path("content/pages/{$slug}.md");

@@ -1,17 +1,5 @@
 @extends('layouts.app')
 
-@section('title', $post->title.' | mccallister.dev')
-@section('description', $post->description)
-@section('og_type', 'article')
-
-@push('meta')
-    @if ($post->featuredImage)
-        <meta property="og:image" content="{{ $post->featuredImage }}">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="{{ $post->featuredImage }}">
-    @endif
-@endpush
-
 @section('content')
     <article>
         <header class="mb-8">

@@ -2,7 +2,7 @@
 
 <article class="py-8 border-b border-rule">
     <h3 class="text-[1.65rem] font-extrabold tracking-tight leading-snug mb-2">
-        <a href="{{ route('posts.show', $post->slug) }}" class="text-ink no-underline hover:text-accent">
+        <a href="{{ route('content.show', $post->slug) }}" class="text-ink no-underline hover:text-accent">
             {{ $post->title }}
         </a>
     </h3>
