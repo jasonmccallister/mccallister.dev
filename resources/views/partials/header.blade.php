@@ -1,8 +1,8 @@
 @php
     $navLinks = [
         ['href' => route('home'), 'path' => '/', 'label' => 'Home'],
-        ['href' => route('about'), 'path' => '/about', 'label' => 'About'],
-        ['href' => route('appearances'), 'path' => '/appearances', 'label' => 'Appearances'],
+        ['href' => route('content.show', 'about'), 'path' => '/about', 'label' => 'About'],
+        ['href' => route('content.show', 'appearances'), 'path' => '/appearances', 'label' => 'Appearances'],
     ];
     $currentPath = '/'.ltrim(request()->path(), '/');
     if ($currentPath === '/') {

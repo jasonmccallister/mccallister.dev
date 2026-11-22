@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Content\ContentRepository;
+use App\Support\Seo;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -16,6 +17,7 @@ class HomeController extends Controller
         return view('home', [
             'featuredPosts' => $featuredPosts,
             'latestPosts' => $latestPosts,
+            'seo' => Seo::forHome(),
         ]);
     }
 }

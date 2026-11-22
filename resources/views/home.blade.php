@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'mccallister.dev')
-@section('description', 'Writing about Go, PHP, containers, cloud infrastructure, and AI')
-
 @section('content')
     <header class="mb-14 pb-10 border-b border-rule">
         <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-8">
@@ -14,7 +11,7 @@
                     I'm a software engineer and architect. I've spent about 20 years on servers, APIs, cloud, and integrations, often in an architect role shipping to and even <a href="https://bref.sh/docs/case-studies/craft-cloud" class="underline underline-offset-2 decoration-rule hover:text-accent hover:decoration-accent">building cloud platforms</a>. Here I write about Go, PHP, containers, and the cloud work that shows up day to day.
                 </p>
                 <p>
-                    <a href="{{ route('about') }}" class="site-nav-link text-base font-medium">
+                    <a href="{{ route('content.show', 'about') }}" class="site-nav-link text-base font-medium">
                         More about me
                     </a>
                 </p>

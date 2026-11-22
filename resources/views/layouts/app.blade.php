@@ -3,20 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'mccallister.dev')</title>
-    <meta name="description" content="@yield('description', 'Writing about Go, PHP, containers, cloud infrastructure, and AI')">
-    <meta property="og:title" content="@yield('title', 'mccallister.dev')">
-    <meta property="og:description" content="@yield('description', 'Writing about Go, PHP, containers, cloud infrastructure, and AI')">
-    <meta property="og:type" content="@yield('og_type', 'website')">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="@yield('title', 'mccallister.dev')">
-    <meta name="twitter:description" content="@yield('description', 'Writing about Go, PHP, containers, cloud infrastructure, and AI')">
-    @stack('meta')
+    @include('partials.seo')
     <link rel="icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
         (function () {
