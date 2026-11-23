@@ -10,7 +10,7 @@ I've been doing this for more than 20 years. A lot of that has been system desig
 
 ## Craft Cloud
 
-I worked with [Bref](https://bref.sh) on [Craft Cloud](https://craftcms.com/cloud), Pixel & Tonic's serverless hosting for Craft CMS. We ran PHP on AWS Lambda with Bref, Laravel for the control plane, and Cloudflare at the edge. I worked with Matthieu Napoli to write it up as a case study: [How Craft CMS built Craft Cloud](https://bref.sh/docs/case-studies/craft-cloud).
+I was the architect on [Craft Cloud](https://craftcms.com/cloud), Pixel & Tonic's serverless hosting for Craft CMS. We ran PHP on AWS Lambda with Bref, Laravel for the control plane, and Cloudflare at the edge. I worked with Matthieu Napoli from Bref to write it up as a case study: [How Craft CMS built Craft Cloud](https://bref.sh/docs/case-studies/craft-cloud).
 
 ## Uses
 
