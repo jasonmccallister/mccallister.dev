@@ -1,15 +1,35 @@
 <?php
 
 use App\Content\ContentRepository;
+use App\Support\Seo;
 use Symfony\Component\Finder\Finder;
 
 it('renders the home page with posts', function () {
     $this->get('/')
         ->assertOk()
+        ->assertSee('<title>'.Seo::documentTitle().'</title>', false)
         ->assertSee('Jason McCallister', false)
+        ->assertSee('property="og:site_name" content="'.config('site.name').'"', false)
         ->assertSee('rel="canonical"', false)
         ->assertSee('og:url', false)
         ->assertSee('application/ld+json', false);
+});
+
+it('uses author name in document titles for pages and posts', function () {
+    $page = app(ContentRepository::class)->page('about');
+    expect($page)->not->toBeNull();
+
+    $this->get('/about')
+        ->assertOk()
+        ->assertSee('<title>'.Seo::documentTitle($page->title).'</title>', false)
+        ->assertSee('property="og:site_name" content="'.config('site.name').'"', false);
+
+    $post = app(ContentRepository::class)->posts()->first();
+    expect($post)->not->toBeNull();
+
+    $this->get('/'.$post->slug)
+        ->assertOk()
+        ->assertSee('<title>'.Seo::documentTitle($post->title).'</title>', false);
 });
 
 it('renders every markdown page', function () {
@@ -55,6 +75,7 @@ it('renders youtube iframes in post markdown without escaping them', function ()
 it('returns a quiet 404 for unknown routes', function () {
     $this->get('/this-page-does-not-exist')
         ->assertNotFound()
+        ->assertSee('<title>'.Seo::documentTitle('Page not found').'</title>', false)
         ->assertSee('Page not found', false)
         ->assertSee('Back home', false);
 });

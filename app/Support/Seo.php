@@ -7,6 +7,17 @@ use App\Content\Post;
 
 class Seo
 {
+    public static function documentTitle(?string $pageTitle = null): string
+    {
+        $authorName = (string) config('site.author.name');
+
+        if ($pageTitle === null || $pageTitle === '') {
+            return $authorName;
+        }
+
+        return $pageTitle.' · '.$authorName;
+    }
+
     /**
      * @param  array<string, mixed>|null  $jsonLd
      * @return array{title: string, description: string, type: string, image: string, canonical: string, jsonLd: list<array<string, mixed>>}
@@ -17,7 +28,7 @@ class Seo
         $image = self::absoluteImage(config('site.default_og_image'));
 
         return [
-            'title' => config('site.name'),
+            'title' => self::documentTitle(),
             'description' => config('site.tagline'),
             'type' => 'website',
             'image' => $image,
@@ -45,7 +56,7 @@ class Seo
         $image = self::absoluteImage(config('site.default_og_image'));
 
         return [
-            'title' => $page->title.' | '.config('site.name'),
+            'title' => self::documentTitle($page->title),
             'description' => $page->description,
             'type' => 'website',
             'image' => $image,
@@ -96,7 +107,7 @@ class Seo
         }
 
         return [
-            'title' => $post->title.' | '.config('site.name'),
+            'title' => self::documentTitle($post->title),
             'description' => $post->description,
             'type' => 'article',
             'image' => $image,

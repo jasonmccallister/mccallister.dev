@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 /*
@@ -44,7 +45,14 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+/**
+ * Issue an HTTP request as if it were served on a Laravel Cloud preview host.
+ */
+function getOnLaravelCloud(string $path, string $host = 'mccallisterdev-production-ujyra4.laravel.cloud'): TestResponse
 {
-    // ..
+    $path = str_starts_with($path, '/') ? $path : '/'.$path;
+
+    return test()
+        ->withHeaders(['Host' => $host])
+        ->get('https://'.$host.$path);
 }

@@ -21,9 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('errors.404', function ($view): void {
+        View::composer('errors::404', function ($view): void {
             $view->with('seo', [
-                'title' => 'Page not found | '.config('site.name'),
+                'title' => Seo::documentTitle('Page not found'),
                 'description' => 'Page not found',
                 'type' => 'website',
                 'image' => Seo::absoluteImage(config('site.default_og_image')),

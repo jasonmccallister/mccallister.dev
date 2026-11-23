@@ -1,6 +1,6 @@
 @php
     $seo = $seo ?? [
-        'title' => config('site.name'),
+        'title' => \App\Support\Seo::documentTitle(),
         'description' => config('site.tagline'),
         'type' => 'website',
         'image' => \App\Support\Seo::absoluteImage(config('site.default_og_image')),
@@ -12,6 +12,9 @@
 
 <title>{{ $seo['title'] }}</title>
 <meta name="description" content="{{ $seo['description'] }}">
+@if (\App\Support\LaravelCloudHost::matchesRequest())
+    <meta name="robots" content="noindex, nofollow">
+@endif
 <link rel="canonical" href="{{ $seo['canonical'] }}">
 <link rel="describedby" href="{{ url('/llms.txt') }}">
 
