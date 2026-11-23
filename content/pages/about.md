@@ -10,7 +10,7 @@ I've been doing this for more than 20 years. A lot of that has been system desig
 
 ## Craft Cloud
 
-I worked with [Bref](https://bref.sh) on [Craft Cloud](https://craftcms.com/cloud), Pixel & Tonic's serverless hosting for Craft CMS. We ran PHP on AWS Lambda with Bref, Laravel for the control plane, and Cloudflare at the edge. Matthieu Napoli wrote it up as a case study: [How Craft CMS built Craft Cloud](https://bref.sh/docs/case-studies/craft-cloud).
+I worked with [Bref](https://bref.sh) on [Craft Cloud](https://craftcms.com/cloud), Pixel & Tonic's serverless hosting for Craft CMS. We ran PHP on AWS Lambda with Bref, Laravel for the control plane, and Cloudflare at the edge. I worked with Matthieu Napoli to write it up as a case study: [How Craft CMS built Craft Cloud](https://bref.sh/docs/case-studies/craft-cloud).
 
 ## Uses
 
@@ -30,4 +30,4 @@ I use [Cursor](https://cursor.com) for a lot of day-to-day coding with agents. P
 
 ## Hardware
 
-Day to day I use a MacBook Pro M4 Pro with 48GB RAM. I also keep a custom desktop on Pop_OS! for Linux work.
+Day to day I use a MacBook Pro M4 Pro with 48GB RAM. I keep a custom desktop on [Omarchy](https://omarchy.org/) for Linux work. There's a home lab with a Rackmate T1 that I'll cover in a future post.

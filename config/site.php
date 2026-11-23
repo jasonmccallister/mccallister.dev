@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name' => 'mccallister.dev',
+    'name' => 'McCallister.dev',
     'tagline' => 'Writing about Go, PHP, containers, cloud infrastructure, and AI',
     'author' => [
         'name' => 'Jason McCallister',

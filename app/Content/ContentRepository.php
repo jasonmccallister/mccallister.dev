@@ -6,6 +6,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\ExternalLink\ExternalLinkExtension;
 use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\MarkdownConverter;
@@ -18,6 +19,8 @@ class ContentRepository
 
     public function __construct()
     {
+        $internalHost = parse_url((string) config('app.url'), PHP_URL_HOST) ?: 'localhost';
+
         $environment = new Environment([
             'html_input' => 'allow',
             'allow_unsafe_links' => false,
@@ -42,11 +45,20 @@ class ContentRepository
                 'symbol' => '#',
                 'title' => 'Permalink',
             ],
+            'external_link' => [
+                'internal_hosts' => '/(^|\.)'.preg_quote($internalHost, '/').'$/',
+                'open_in_new_window' => true,
+                'html_class' => 'external-link',
+                'nofollow' => '',
+                'noopener' => 'external',
+                'noreferrer' => 'external',
+            ],
         ]);
 
         $environment->addExtension(new CommonMarkCoreExtension);
         $environment->addExtension(new GithubFlavoredMarkdownExtension);
         $environment->addExtension(new HeadingPermalinkExtension);
+        $environment->addExtension(new ExternalLinkExtension);
 
         $this->converter = new MarkdownConverter($environment);
     }

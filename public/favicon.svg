@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JM">
+  <defs>
+    <radialGradient id="wash" cx="82%" cy="12%" r="58%">
+      <stop offset="0%" stop-color="#d4545a" stop-opacity="0.30"/>
+      <stop offset="50%" stop-color="#d4545a" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#d4545a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx="8%" cy="92%" r="52%">
+      <stop offset="0%" stop-color="#7aa2d4" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#7aa2d4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Soft paper tile with the same coral / cool washes as the site body -->
+  <rect width="64" height="64" rx="14" fill="#f6f7fb"/>
+  <rect width="64" height="64" rx="14" fill="url(#wash)"/>
+  <rect width="64" height="64" rx="14" fill="url(#cool)"/>
+
+  <!-- Accent rule -->
+  <rect x="16" y="50" width="32" height="3" rx="1.5" fill="#d4545a"/>
+
+  <!-- JM from IBM Plex Sans Bold outlines -->
+  <g fill="#1a2332">
+    <path d="M27.68 20.88V35.86Q27.68 37.31 27.21 38.5Q26.74 39.7 25.84 40.53Q24.93 41.36 23.65 41.83Q22.36 42.29 20.73 42.29Q19.16 42.29 17.97 41.87Q16.78 41.45 15.91 40.66Q15.05 39.88 14.51 38.79Q13.97 37.7 13.76 36.37L18.04 35.53Q18.56 38.28 20.67 38.28Q21.67 38.28 22.38 37.64Q23.09 37.01 23.09 35.65V24.56H16.69V20.88Z"/>
+    <path d="M44.35 28.13H44.26L42.72 31.21L38.62 38.67L34.6 31.24L33 27.92H32.91V41.96H28.59V20.88H33.45L38.62 30.76H38.68L43.78 20.88H48.67V41.96H44.35Z"/>
+  </g>
+</svg>

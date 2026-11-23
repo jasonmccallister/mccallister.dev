@@ -13,7 +13,7 @@
 <header class="site-chrome">
     <div class="w-full max-w-3xl mx-auto px-5 h-14 flex items-center justify-between gap-4">
         <a href="{{ route('home') }}" class="text-base font-extrabold tracking-tight text-ink no-underline">
-            mccallister<span class="site-mark-dot">.</span>dev
+            McCallister<span class="site-mark-dot">.</span>dev
         </a>
 
         <nav class="hidden sm:flex items-center gap-6" aria-label="Main navigation">

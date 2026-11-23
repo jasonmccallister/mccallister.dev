@@ -5,12 +5,10 @@
 
             <p class="max-w-md leading-relaxed">
                 I'm building an API runtime built for MCP
-                (<a href="https://charterapp.dev" class="font-bold text-accent underline underline-offset-2 decoration-accent/45 hover:decoration-accent" target="_blank" rel="noopener noreferrer">charterapp.dev</a>)
+                (<a href="https://charterapp.dev" class="external-link font-bold text-accent underline underline-offset-2 decoration-accent/45 hover:decoration-accent" target="_blank" rel="noopener noreferrer">charterapp.dev</a>)
             </p>
 
             @include('partials.social-icons')
-
-            <p class="text-xs text-muted/70">Laravel · markdown · IBM Plex</p>
         </div>
     </div>
 </footer>
