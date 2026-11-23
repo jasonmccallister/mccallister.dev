@@ -2,13 +2,10 @@
 
 @section('content')
     <header class="mb-14 pb-10 border-b border-rule">
-        <div class="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-8">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
             <div class="min-w-0 flex-1">
-                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink leading-tight mb-4">
-                    Jason McCallister
-                </h1>
                 <p class="text-[1.15rem] sm:text-xl text-muted leading-relaxed mb-5">
-                    I'm a software engineer and architect. I've spent about 20 years on servers, APIs, cloud, and integrations, often in an architect role shipping to and even <a href="https://bref.sh/docs/case-studies/craft-cloud" class="underline underline-offset-2 decoration-rule hover:text-accent hover:decoration-accent">building cloud platforms</a>. Here I write about Go, PHP, containers, and the cloud work that shows up day to day.
+                    I'm a software engineer and architect. I've spent about 20 years on servers, APIs, cloud, and integrations, often in an architect role shipping to and even <a href="https://bref.sh/docs/case-studies/craft-cloud" class="font-bold text-accent underline underline-offset-2 decoration-accent/45 hover:decoration-accent">building cloud platforms</a>.
                 </p>
                 <p>
                     <a href="{{ route('content.show', 'about') }}" class="site-nav-link text-base font-medium">
@@ -16,7 +13,7 @@
                     </a>
                 </p>
             </div>
-            <div class="flex flex-col items-center gap-4 shrink-0 self-center sm:self-start">
+            <div class="flex flex-col items-center gap-4 shrink-0 self-center">
                 <img
                     src="/images/jason.jpg"
                     alt="Jason McCallister"

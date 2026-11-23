@@ -109,7 +109,7 @@
 .prose {
     --tw-prose-body: #3d4a5c;
     --tw-prose-headings: var(--color-ink);
-    --tw-prose-links: var(--color-link);
+    --tw-prose-links: var(--color-accent);
     --tw-prose-bold: var(--color-ink);
     --tw-prose-quotes: var(--color-ink);
     --tw-prose-code: var(--color-ink);
@@ -148,12 +148,12 @@ html.dark .prose {
 }
 
 .prose a {
-    @apply underline underline-offset-2 font-medium;
-    text-decoration-color: color-mix(in srgb, var(--color-link) 40%, transparent);
+    @apply underline underline-offset-2 font-bold;
+    color: var(--color-accent);
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
 }
 
 .prose a:hover {
-    color: var(--color-accent);
     text-decoration-color: var(--color-accent);
 }
 

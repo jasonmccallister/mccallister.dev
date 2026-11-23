@@ -1,25 +1,16 @@
-<footer class="site-chrome border-t mt-auto">
-    <div class="w-full max-w-3xl mx-auto px-5 py-8 text-sm text-muted font-sans">
-        <p class="mb-3">&copy; {{ now()->year }} {{ config('site.author.name') }}</p>
-        <div class="flex flex-wrap gap-4">
-            @foreach (config('site.author.sameAs') as $href)
-                @php
-                    $label = match (true) {
-                        str_contains($href, 'github.com') => 'GitHub',
-                        str_contains($href, 'x.com') || str_contains($href, 'twitter.com') => 'X',
-                        str_contains($href, 'linkedin.com') => 'LinkedIn',
-                        default => 'Profile',
-                    };
-                @endphp
-                <a
-                    href="{{ $href }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="site-nav-link"
-                >
-                    {{ $label }}<span class="sr-only"> (opens in new tab)</span>
-                </a>
-            @endforeach
+<footer class="site-chrome mt-auto">
+    <div class="w-full max-w-3xl mx-auto px-5 py-12 sm:py-16 text-sm text-muted font-sans text-center">
+        <div class="flex flex-col items-center gap-5">
+            <p>&copy; {{ now()->year }} {{ config('site.author.name') }}</p>
+
+            <p class="max-w-md leading-relaxed">
+                I'm building an API runtime built for MCP
+                (<a href="https://charterapp.dev" class="font-bold text-accent underline underline-offset-2 decoration-accent/45 hover:decoration-accent" target="_blank" rel="noopener noreferrer">charterapp.dev</a>)
+            </p>
+
+            @include('partials.social-icons')
+
+            <p class="text-xs text-muted/70">Laravel · markdown · IBM Plex</p>
         </div>
     </div>
 </footer>
