@@ -19,8 +19,7 @@
     <script>
         (function () {
             const stored = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const dark = stored === 'dark' || (!stored && prefersDark);
+            const dark = stored !== 'light';
             document.documentElement.classList.toggle('dark', dark);
         })();
     </script>
